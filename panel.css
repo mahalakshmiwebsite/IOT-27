@@ -149,3 +149,24 @@
 
 
 
+.login {
+  display: flex;
+  height: 100vh;
+}
+.image-section {
+  flex: 1;
+  background: url('your-image-url.jpg') no-repeat center center;
+  background-size: cover;
+}
+.login-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+} */

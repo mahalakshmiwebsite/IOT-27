@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>markentry</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="D:\IOT-27\panel.css">
+</head>
+<body>
+    <form class="container" onsubmit="return false">
+        <div class="form-group">
+            <label for="tamil">Tamil</label>
+            <input type="number" class="form-control" id="tamil">
+            
+            <label for="english">English</label>
+            <input type="number" class="form-control" id="english">
+            
+            <label for="maths">Maths</label>
+            <input type="number" class="form-control" id="maths">
+            
+            <label for="cs">CS</label>
+            <input type="number" class="form-control" id="cs">
+            
+            <button type="submit" onclick="total()" class="btn btn-success">Calculate</button>
+
+            <div id="appear" class="container alert alert-success" style="display:none;">
+                <p>Result: <span id="result"></span></p>
+                <p>Status: <span id="status"></span></p>
+                <p>Average: <span id="avg"></span></p>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function total() {
+            let tamil = document.getElementById("tamil").value;
+            let english = document.getElementById("english").value;
+            let maths = document.getElementById("maths").value;
+            let cs = document.getElementById("cs").value;
+
+            let tamil1 = parseInt(tamil);
+            let english1 = parseInt(english);
+            let maths1 = parseInt(maths);
+            let cs1 = parseInt(cs);
+
+            let total = tamil1 + english1 + maths1 + cs1;
+            document.getElementById("result").textContent = total;
+
+            let avg = total / 4;
+            document.getElementById("avg").textContent = avg.toFixed(2);  
+
+            
+            document.getElementById("appear").style.display = "block";
+
+        
+            if (tamil1 >= 35 && english1 >= 35 && maths1 >= 35 && cs1 >= 35) {
+                document.getElementById("status").textContent = "Pass";
+                document.getElementById("status").style.color = "green";
+            } else {
+                document.getElementById("status").textContent = "Fail";
+                document.getElementById("status").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
